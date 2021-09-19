@@ -10,7 +10,7 @@ function weatherHistory(value, time, place, type, unit) {
 
 
 
-let temp = weatherHistory(25.4,2000,"via","test","mm")
+let temp = weatherHistory(22,3000,"test","snow", "mm")
 
 
-console.log()
+console.log(temp.place)
