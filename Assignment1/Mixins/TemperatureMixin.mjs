@@ -69,7 +69,7 @@ function wind(value, time, place, type, unit, direction) {
     const weatherDataFunction = weatherData(value, time, place, type, unit)
 
     function getDirection() {
-        return direction
+        return  
     }
 
     function convertToMPH() {
