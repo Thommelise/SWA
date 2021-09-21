@@ -1,37 +1,43 @@
 import { weatherData } from "./WeatherDataMixin.mjs";
 
-const weather1 = weatherData(11,1111,"via","rain","mm")
 
-function weatherHistory() {
-    let data = []
+
+function weatherHistory(value, time, place, type, unit) {
+
+const state = {value, time, place, type, unit}   
+const weatherDataFunction = weatherData(state)
+let list = []
     
 
-  
+function setPlace(data){
+    state.place = data 
+     return data
+}
 
-    function add(weather){
-        
-        data.push(weather)
-        
-    }
+function clearPlace(){
+    delete state.place
+}
 
-    function getAdd(){
-        return data
-    }
+function add(){
+    list.push(state)
+}
 
+function getAdd(){
+    return list
+}
 
+    
 
-
-    return {add,getAdd}
-
+    return {setPlace,add,getAdd,clearPlace}
 }
 
  
-let temp = weatherHistory(25.4,2000,"via","rain","mm")
+let temp = weatherHistory(25.4,2000,"vidasda","rain","mm")
 let temp1 = weatherHistory(25.4,2000,"via","rain","mm")
-temp1.add(weather1)
+temp.add()
 
 
-console.log(temp1.getAdd()[0].getPlace())
+console.log(temp.getAdd()[0])
 
 
 
