@@ -1,6 +1,6 @@
-import {weatherPrediction} from "./weatherPredictionClass.mjs"
+import {WeatherPredictionClass} from "./WeatherPredictionClass.mjs"
 
-class cloudCoveragePredictionClass extends weatherPrediction{
+class CloudCoveragePredictionClass extends WeatherPredictionClass{
     constructor(minValue, maxValue, time, place, type, unit){
         super(minValue, maxValue, time, place, type, unit)
         this.uv = uv

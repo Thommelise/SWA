@@ -1,7 +1,7 @@
-import {weatherPrediction} from "./weatherPredictionClas.mjs"
+import {WeatherPredictionClass} from "./WeatherPredictionClass.mjs"
 
 
-class windPredictionClass extends weatherPrediction{
+class WindPredictionClass extends WeatherPredictionClass{
     constructor(minValue, maxValue, time, place, type, unit){
         super(minValue, maxValue, time, place, type, unit)
         this.expectedDirection = expectedDirection

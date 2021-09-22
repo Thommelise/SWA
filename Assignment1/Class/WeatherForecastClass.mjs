@@ -1,4 +1,4 @@
-import { WeatherPrediction } from "./WeatherPredictionClass.mjs"
+import { WeatherPredictionClass } from "./WeatherPredictionClass.mjs"
 
 
 
@@ -57,8 +57,7 @@ class WeatherForecastClass extends WeatherPredictionClass  {
 
 }
 
-let test = new WeatherForecastClass(100, 200, 20000, "MM", "light0", "C0")
-test.setPeriodFilter("07/03/1999","01/02/2021")
-test.convertToUSUnits()
-console.log(test.add()[3])
+let test = new WeatherForecastClass(100, 200, 20000, "VIA0", "light0", "C0")
+test.setPeriodFilter("23/323/32232","2323/232/2323")
+console.log(test.add()[4])
  
