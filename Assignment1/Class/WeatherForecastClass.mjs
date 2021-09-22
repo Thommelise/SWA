@@ -1,12 +1,15 @@
-import { WeatherPrediction } from "./WeatherDataClass.mjs";
+import { WeatherPrediction } from "./WeatherPredictionClass.mjs"
 
 
-class WeatherForecastClass extends WeatherPrediction {
-    constructor(value, time, place, type, unit)
-    super(value, time, place, type, unit)
 
-   
-
+class WeatherForecastClass extends WeatherPredictionClass  {
+    constructor(value, place, type, unit, dateFrom, dateTo){
+    super(value, place, type, unit, dateFrom, dateTo)
+    
+}
+    getPlaceFilter(){
+        return this.place
+    }
     setPlacefilter(place){
         place = this.place
     }
@@ -22,13 +25,16 @@ class WeatherForecastClass extends WeatherPrediction {
         delete this.type
     }
 
-    setPeriodFilter(time){
-        time = this.time
+    setPeriodFilter(dateFrom, dateTo){
+        this.dateFrom = dateFrom
+        this.dateTo = dateTo
     }
-
+    
     clearPeriodFilter(){
-        delete this.time
+        delete this.dateFrom
+        delete this.dateTo
     }
+  
 
     convertToUSUnits() {
         if(this.unit === "MM") {
@@ -43,10 +49,16 @@ class WeatherForecastClass extends WeatherPrediction {
             this.unit = "MM"
         }
     }
-
-    add(data){
-    
-    }
-
+   
+    add(){  
+       let data = [this.value, this.place, this.type, this.unit, this.dateFrom, this.dateTo]
+        return data
+    } 
 
 }
+
+let test = new WeatherForecastClass(100, 200, 20000, "MM", "light0", "C0")
+test.setPeriodFilter("07/03/1999","01/02/2021")
+test.convertToUSUnits()
+console.log(test.add()[3])
+ 

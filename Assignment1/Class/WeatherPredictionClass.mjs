@@ -1,13 +1,23 @@
 import { EventDataType } from "./EventDataTypeClass.mjs";
 import {weatherDataClass} from  "./WeatherDataClass.mjs"
 
-class weatherPrediction extends EventDataType {
-    constructor(minValue, maxValue, time, place, type, unit) {
+class WeatherPrediction extends EventDataType {
+    constructor(minValue, maxValue, time, place, type, unit, dateFrom, DateTo) {
         super(time, place, type, unit)
+        this.dateFrom = dateFrom
+        this.DateTo = DateTo
         this.minValue = minValue
         this.maxValue = maxValue
     }
 
+    getTimeFrom(){
+        return this.datefrom
+    }
+
+    getTimeTo() {
+        return this.dateTo
+    }
+    
     getMin() {
         return this.minValue
     }
@@ -25,4 +35,4 @@ class weatherPrediction extends EventDataType {
     }
 }
 
-export {weatherPrediction}
+export {WeatherPrediction}
