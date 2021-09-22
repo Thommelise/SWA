@@ -1,6 +1,6 @@
 import { WeatherDataClass } from "./WeatherDataClass.mjs";
 
-class temperature extends WeatherDataClass {
+class Temperature extends WeatherDataClass {
     constructor(value, time, place, type, unit) {
         super(value, time, place, type, unit)
     }
@@ -20,12 +20,12 @@ class temperature extends WeatherDataClass {
     }
 }
 
-let temp1 = new temperature(79, 2100, "Horsens", "Sunny", "F")
+let temp1 = new Temperature(79, 2100, "Horsens", "Sunny", "F")
 temp1.convertToC()
 console.log(temp1.getValue(), temp1.getUnit())
 
 
-class precipitation extends WeatherDataClass {
+class Precipitation extends WeatherDataClass {
     constructor(value, time, place, type, unit) {
         super(value, time, place, type, unit)
     }
@@ -50,7 +50,7 @@ class precipitation extends WeatherDataClass {
 }
 
 
-class wind extends WeatherDataClass {
+class Wind extends WeatherDataClass {
     constructor(value, time, place, type, unit, direction) {
         super(value, time, place, type, unit)
         this.direction = direction
@@ -76,7 +76,7 @@ class wind extends WeatherDataClass {
 }
 
 
-class cloudCoverage extends WeatherDataClass {
+class CloudCoverage extends WeatherDataClass {
     constructor(value, time, place, type, unit, uv) {
         super(value, time, place, type, unit)
         this.uv = uv
@@ -87,6 +87,6 @@ class cloudCoverage extends WeatherDataClass {
     }
 }
 
-let test = new cloudCoverage(22,22,22,22,22,22)
+let test = new CloudCoverage(22,22,22,22,22,22)
 
 console.log(test.getUv())

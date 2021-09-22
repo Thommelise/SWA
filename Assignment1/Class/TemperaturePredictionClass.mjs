@@ -1,6 +1,6 @@
-import {weatherPrediction} from "./weatherPredictionClass.mjs"
+import {WeatherPredictionClass} from "./weatherPredictionClass.mjs"
 
-class temperaturePredictionClass extends weatherPrediction{
+class TemperaturePredictionClass extends WeatherPredictionClass{
     
     constructor(minValue, maxValue, time, place, type, unit){
         super(minValue, maxValue, time, place, type, unit)
@@ -31,6 +31,6 @@ class temperaturePredictionClass extends weatherPrediction{
 }
 
 
-let hot = new temperaturePredictionClass(10, 20, 2000, "VIA", "light", "C")
+let hot = new TemperaturePredictionClass(10, 20, 2000, "VIA", "light", "C")
 console.log(hot.getType())
 console.log(hot.convertToF().minValueinF)

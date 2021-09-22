@@ -1,6 +1,6 @@
-import {weatherPrediction} from "./weatherPredictionClass.mjs"
+import {WeatherPredictionClass} from "./WeatherPredictionClass.mjs"
 
-class precipitationPredictionClass extends weatherPrediction{
+class PrecipitationPrediction extends WeatherPredictionClass{
     constructor(minValue, maxValue, time, place, type, unit, expectedTypes){
         super(minValue, maxValue, time, place, type, unit)
         this.expectedTypes = expectedTypes
@@ -34,5 +34,5 @@ class precipitationPredictionClass extends weatherPrediction{
     }
 }
 
-let rain = new precipitationPredictionClass(15, 75, 2021, "Home", "Rain", "MM", "Rain")
+let rain = new PrecipitationPrediction(15, 75, 2021, "Home", "Rain", "MM", "Rain")
 console.log(rain.convertToInches().minValue)
