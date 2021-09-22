@@ -33,6 +33,11 @@ function setPeriodFilter(dateFrom, dateTo){
     state.dateTo = dateTo
 }
 
+function clearPeriodFilter(){
+    delete state.dateFrom
+    delete state.dateTo
+}
+
 function add(){
     list.push(state)
 }
@@ -60,6 +65,7 @@ function convertToInternationalUnits() {
         ...dateIntervalFunction,
         ...weatherDataFunction,
         setPeriodFilter,
+        clearPeriodFilter,
         setPlace,
         clearPlace,
         setType,
@@ -77,6 +83,7 @@ let temp1 = weatherHistory(25.4,2000,"via","rain","MM","07/06/2021","03/08/2021"
 temp.convertToUSUints()
 temp.setPeriodFilter("22/06/3333","20/93/3929")
 temp.add()
+
 
 
 

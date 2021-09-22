@@ -83,6 +83,10 @@ class cloudCoverage extends WeatherDataClass {
     }
 
     getUv() {
-        return uv
+        return this.uv
     }
 }
+
+let test = new cloudCoverage(22,22,22,22,22,22)
+
+console.log(test.getUv())

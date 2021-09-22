@@ -1,11 +1,15 @@
-import { WeatherDataClass } from "./WeatherDataClass.mjs";
+import { WeatherDataClass } from "./WeatherDataClass.mjs"
 
 
-class WeatherHistoryClass extends WeatherDataClass {
-    constructor(value, time, place, type, unit){
-    super(value, time, place, type, unit)
-}
+
+class WeatherHistoryClass extends WeatherDataClass  {
+    constructor(value, place, type, unit, dateFrom, dateTo){
+    super(value, place, type, unit, dateFrom, dateTo)
     
+}
+    getPlaceFilter(){
+        return this.place
+    }
     setPlacefilter(place){
         place = this.place
     }
@@ -21,13 +25,16 @@ class WeatherHistoryClass extends WeatherDataClass {
         delete this.type
     }
 
-    setPeriodFilter(time){
-        time = this.time
+    setPeriodFilter(dateFrom, dateTo){
+        this.dateFrom = dateFrom
+        this.dateTo = dateTo
     }
-
+    
     clearPeriodFilter(){
-        delete this.time
+        delete this.dateFrom
+        delete this.dateTo
     }
+  
 
     convertToUSUnits() {
         if(this.unit === "MM") {
@@ -42,23 +49,15 @@ class WeatherHistoryClass extends WeatherDataClass {
             this.unit = "MM"
         }
     }
-
-    add(){  
-        const data = [this.value, this.time, this.place, this.type, this.unit]
-    } 
-
-    getAdd(){
-        let test = add() 
-       return test    }
-
    
-    
-
+    add(){  
+       let data = [this.value, this.place, this.type, this.unit, this.dateFrom, this.dateTo]
+        return data
+    } 
 
 }
 
 let test = new WeatherHistoryClass(100, 200, 20000, "VIA0", "light0", "C0")
-
-test.add()
-console.log(test.getAdd())
+test.setPeriodFilter("23/323/32232","2323/232/2323")
+console.log(test.add()[4])
  
