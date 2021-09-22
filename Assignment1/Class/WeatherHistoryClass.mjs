@@ -2,11 +2,10 @@ import { WeatherDataClass } from "./WeatherDataClass.mjs";
 
 
 class WeatherHistoryClass extends WeatherDataClass {
-    constructor(value, time, place, type, unit)
+    constructor(value, time, place, type, unit){
     super(value, time, place, type, unit)
-
-   
-
+}
+    
     setPlacefilter(place){
         place = this.place
     }
@@ -44,11 +43,22 @@ class WeatherHistoryClass extends WeatherDataClass {
         }
     }
 
-    add(data){
-                 
-    }
+    add(){  
+        const data = [this.value, this.time, this.place, this.type, this.unit]
+    } 
+
+    getAdd(){
+        let test = add() 
+       return test    }
+
+   
+    
 
 
 }
 
+let test = new WeatherHistoryClass(100, 200, 20000, "VIA0", "light0", "C0")
+
+test.add()
+console.log(test.getAdd())
  
