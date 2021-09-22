@@ -14,6 +14,7 @@ function event(time, place) {
     }
 }
 
+
 function dataType(type, unit) {
     
     function getType() {
